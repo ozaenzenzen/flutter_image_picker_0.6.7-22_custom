@@ -332,21 +332,6 @@ public class ImagePickerDelegate
   }
 
   private void launchPickImageFromGalleryIntent() {
-    // Intent pickImageIntent;
-    // if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-    //   pickImageIntent =
-    //       new ActivityResultContracts.PickVisualMedia()
-    //           .createIntent(
-    //               activity,
-    //               new PickVisualMediaRequest.Builder()
-    //                   .setMediaType(ActivityResultContracts.PickVisualMedia.ImageOnly.INSTANCE)
-    //                   .build());
-    // } else {
-    //   pickImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
-    //   pickImageIntent.setType("image/*");
-    // }
-    // activity.startActivityForResult(pickImageIntent, REQUEST_CODE_CHOOSE_IMAGE_FROM_GALLERY);
-
     Intent pickImageIntent = new Intent(Intent.ACTION_GET_CONTENT);
     pickImageIntent.setType("image/*");
 
@@ -367,13 +352,6 @@ public class ImagePickerDelegate
     }
     launchTakeImageWithCameraIntent();
   }
-
-  // private boolean needRequestImagePermission() {
-  //   if (permissionManager == null) {
-  //     return false;
-  //   }
-  //   return permissionManager.needRequestImagePermission();
-  // }
 
   private boolean needRequestCameraPermission() {
     if (permissionManager == null) {
